@@ -229,6 +229,7 @@ class Terraform(object):
 
             # simple flag,
             if value is IsFlagged:
+                print("Python, did you reach here?")
                 import pdb 
                 pdb.set_trace()
                 cmds += ['-{k}'.format(k=option)]
