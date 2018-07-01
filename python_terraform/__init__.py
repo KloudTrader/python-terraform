@@ -229,9 +229,9 @@ class Terraform(object):
 
             # simple flag,
             if value is IsFlagged:
-                print("Python, did you reach here?")
-                import pdb 
-                pdb.set_trace()
+                # print("Python, did you reach here?")
+                # import pdb 
+                # pdb.set_trace()
                 cmds += ['-{k}'.format(k=option)]
                 continue
 
@@ -292,7 +292,7 @@ class Terraform(object):
             environ_vars = os.environ.copy()
 
         p = subprocess.Popen(cmds, stdout=stdout, stderr=stderr,
-                             cwd=working_folder, env=environ_vars)
+                             cwd=working_folder, env=environ_vars, shell=False)
 
         synchronous = kwargs.pop('synchronous', True)
         if not synchronous:
