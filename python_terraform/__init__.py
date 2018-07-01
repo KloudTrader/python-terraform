@@ -229,6 +229,8 @@ class Terraform(object):
 
             # simple flag,
             if value is IsFlagged:
+                import pdb 
+                pdb.set_trace()
                 cmds += ['-{k}'.format(k=option)]
                 continue
 
